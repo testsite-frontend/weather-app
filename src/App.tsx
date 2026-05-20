@@ -4,7 +4,7 @@ import { Forecast } from "./components/Forecast"
 import { WeatherMap } from "./components/WeatherMap"
 import { WeatherBackground } from "./components/WeatherBackground"
 import { useWeatherStore } from "./store/weatherStore"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 function App() {
   const { loading,weather } = useWeatherStore()

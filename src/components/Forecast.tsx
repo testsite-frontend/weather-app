@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { useWeatherStore } from "../store/weatherStore"
 import { weatherCodeMap } from "../utils/weatherCodes" //天気code
 
