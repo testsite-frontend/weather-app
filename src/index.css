@@ -1,0 +1,633 @@
+@charset "UTF-8";
+@import "tailwindcss";
+/* CSS Document */
+
+/* ============================================ */
+
+/* リセット */
+
+/* ============================================ */
+
+
+
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%; /* iOSの向き変更後のフォントサイズ調整 */
+  -webkit-tap-highlight-color: transparent; /* iOSリンクの灰色*/
+	font-size: 62.5%;
+	font-feature-settings: "palt";
+	-webkit-font-feature-settings: "palt";
+	-moz-font-feature-settings: "palt";
+  word-break: break-all;
+
+  font-family: "Noto Sans JP", sans-serif;
+}
+body,
+p,
+table,
+blockquote,
+address,
+pre,
+iframe,
+form,
+figure,
+dl {
+  margin: 0;
+}
+main {
+  display: block;
+}
+
+/* リセット-見出し */
+/* ============================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+/* リセット-テキスト関連 */
+/* ============================================ */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: .2s;
+    font-size: 1.4rem;
+}
+a:hover {
+	transition: .3s;
+	text-decoration-color: transparent;
+  opacity: .8;
+  
+}
+abbr[title] {
+  border-bottom: none; /* Chromeの下枠削除 */
+  text-decoration: underline; /* テキスト装飾を追加 */
+  text-decoration: underline dotted; /* テキスト装飾を追加 */
+}
+strong {
+  font-weight: bold;
+}
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* ブラウザでフォントサイズの継承とスケーリングを修正 */
+  font-size: inherit; /* ブラウザで奇数の `em`フォントサイズを修正 */
+}
+small {
+  font-size: 85%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+
+/* リセット-リスト */
+/* ============================================ */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+dd {
+  margin-left: 0;
+}
+
+/* リセット-フォーム */
+/* ============================================ */
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    border-radius: 0;
+    text-align: inherit;
+    padding: 5px;
+    transition: .2s;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+input{
+  width: 100%;
+transition: 0.2s;
+color: white;
+}
+
+input::placeholder{
+  color: white;
+  font-size: 1.3rem;
+  letter-spacing: .1rem;
+}
+
+input:focus {
+  border: 1px solid rgba(255, 255, 255, 1);
+  outline: none;
+}
+::placeholder {
+  color: #aaa;
+}
+:-ms-input-placeholder {
+  color: #aaa;
+}
+::-ms-input-placeholder  {
+  color: #aaa;
+}
+
+/* ラジオとチェックボックスの外観をリセットして、iOSでの外観を維持 */
+[type="checkbox"] {
+  -webkit-appearance: checkbox;
+  appearance: checkbox;
+}
+[type="radio"] {
+  -webkit-appearance: radio;
+  appearance: radio;
+}
+
+/** Edge、IEでオーバーフローを表示. */
+button,
+input {
+  overflow: visible;
+}
+
+/* Edge, Firefox, and IEのテキスト変換の継承を削除 */
+button,
+select {
+  text-transform: none;
+}
+
+button{
+  background: white;
+    color: #232323;
+    width: 100%;
+    max-width: 25rem;
+    text-align: center;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+button:hover,
+[type="button"]:hover,
+[type="reset"]:hover,
+[type="submit"]:hover{
+  background:#d9d9d9;
+}
+
+
+button[disabled],
+[type="button"][disabled],
+[type="reset"][disabled],
+[type="submit"][disabled] {
+  cursor: default;
+}
+
+/* Firefox：内側の境界線とパディングを削除 */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* フォーカススタイルを復元 */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/* フォーカススタイルを復元 */
+select::-ms-expand {
+  display: none;
+}
+
+/* パディングリセット */
+option {
+  padding: 0;
+}
+
+/* 非表示にリセット */
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+legend {
+  color: inherit; /* Correct the color inheritance from `fieldset` elements in IE. */
+  display: table; /* EdgeおよびIEでのテキストの折り返し修正 */
+  max-width: 100%; /* EdgeおよびIEでのテキストの折り返し修正 */
+  padding: 0; /*  `fieldset`要素をゼロにしたときに引っ掛からないように */
+  white-space: normal; /* EdgeおよびIEでのテキストの折り返し修正 */
+}
+
+/* Chrome、Firefox、Operaで正しい垂直方向の配置 */
+progress {
+  vertical-align: baseline;
+}
+
+/* IEのデフォルトの垂直スクロールバーを削除. */
+textarea {
+  overflow: auto;
+}
+
+/* Chromeの増分ボタンと減分ボタンのカーソルスタイルを修正 */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  outline-offset: -2px; /* Safariのアウトラインスタイルを修正 */
+}
+
+/* macOSのChromeとSafariの内側のパディングを削除 */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* iOSおよびSafariのクリッカブルタイプの設定 */
+  font: inherit; /* Safariでフォントのプロパティを「継承」に変更 */
+}
+
+label[for] {
+  cursor: pointer;
+}
+
+/* リセット-テーブル */
+/* ============================================ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th, td {
+	     border: 1px solid #fff; /* 全方向の線 */
+    padding: 1rem .5rem;
+    text-align: center;
+    color: white;
+}
+
+caption {
+  text-align: left;
+}
+
+
+hr {
+  box-sizing: content-box; /* Firefoxで正しいボックスサイズ */
+  height: 0; /* Firefoxで正しいボックスサイズ */
+  overflow: visible; /* EdgeとIEでオーバーフロー */
+  border: 0;
+  border-top: 1px solid;
+  margin: 0;
+  clear: both;
+  color: inherit;
+}
+address {
+  font-style: inherit;
+}
+img {
+  border-style: none;
+  vertical-align: bottom;
+  max-width: 100%;
+}
+a:hover img {
+	opacity: .7;
+	transition: .3s;
+}
+embed,
+object,
+iframe {
+  border: 0;
+  vertical-align: bottom;
+}
+/* Edge、IE +、Firefoxで正しいディスプレイを追加 */
+details {
+  display: block;
+}
+summary {
+  display: list-item;
+}
+/* IEで正しいディスプレイを追加. */
+template,
+[hidden] {
+  display: none;
+}
+
+
+/* ============================================ */
+
+/* コンテンツ */
+
+/* ============================================ */
+br.sp{
+  display: none;
+}
+.wrapper{
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    #7dd3fc,
+    #60a5fa,
+    #6366f1
+  );
+  padding: 3rem;
+  color: #232323;
+}
+
+.wrapper > div.content{
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+}
+
+.wrapper > div.content.active{
+  position: unset;
+  width: auto;
+      transform: unset;
+}
+
+
+
+h1{
+  font-size: 2.5rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+.search_flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.search_flex input {
+    flex-basis: calc(100% - 4.5rem);
+}
+
+.search_flex button {
+    flex-basis: 3rem;
+    border-radius: 100%;
+}
+
+ul.error {
+    color: #ff2b2b;
+    margin-bottom: 3rem;
+}
+
+
+th{
+  font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.info_wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.info_wrapper .today {
+    flex-basis: 20rem;
+    text-align: center;
+        color: white;
+        font-weight: bold;
+}
+
+.info_wrapper .everyday {
+    flex-basis: calc(100% - 22rem);
+}
+
+.info_wrapper .today p.main {
+
+}
+
+
+.info_wrapper .today i {
+font-size: 5rem;
+position: relative;
+    top: 2px;
+}
+
+.info_wrapper .today p.icon {
+      margin: 2rem 0;
+}
+
+.info_wrapper .today .temperature span:first-child {
+    color: #ff2121;
+    
+}
+
+.info_wrapper .today .temperature span:last-child {
+    color: #004cff;
+}
+
+.info_wrapper .today .temperature {
+    display: flex;
+    justify-content: center;
+}
+
+.loading {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.loading span {
+    font-size: 2rem;
+    display: inline-block;
+    color: white;
+    margin-right: 6px;
+    
+}
+
+.loading span:nth-child(2) {
+  font-size: 1.5rem;
+}
+
+.weatherback {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+
+.forecast_wrapper {
+    margin-bottom: 3rem;
+}
+
+.rain {
+    color: #0087ff;
+}
+
+
+
+/*晴れ*/
+.sun{
+  width:200px;
+  height:200px;
+  border-radius:999px;
+  background:#FFD93D;
+  position:absolute;
+  top:50px;
+  right:50px;
+  filter:blur(2px);
+  box-shadow:0 0 100px #ffffff;
+}
+.sunny-bg{
+  background: linear-gradient(to bottom, #4facfe, #00f2fe);
+}
+
+/* 曇り */
+.cloudy-bg{
+  background: linear-gradient(to bottom, #757f9a, #d7dde8);
+}
+.cloud{
+  position: absolute;
+  width: 220px;
+  height: 70px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.4);
+  filter: blur(4px);
+}
+
+/* 雨 */
+.rain-bg{
+  background: linear-gradient(to bottom, #373B44, #4286f4);
+}
+
+.rain-drop{
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: rgba(255,255,255,0.6);
+  transform: rotate(15deg);
+}
+
+/* 雪 */
+.snow-bg{
+  background: linear-gradient(to bottom, #8e9eab, #eef2f3);
+}
+
+.snowflake{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: white;
+  filter: blur(1px);
+}
+
+/* 雷 */
+.thunder-bg{
+  background: linear-gradient(to bottom, #232526, #414345);
+}
+
+.lightning{
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.8);
+  opacity: 0;
+}
+
+span.max {
+
+    color: #ff2121;
+}
+
+span.min {
+    color: #004cff;
+}
+i.wethericon {
+       font-size: 2.5rem;
+    position: relative;
+    top: 1px;
+}
+
+/* ============================================ */
+
+/* SP */
+
+/* ============================================ */
+
+
+@media (max-width: 767px) { 
+br.sp{
+  display: block;
+}
+th{
+  font-size: 1.4rem;
+}
+.info_wrapper {
+display: block;
+}
+
+.info_wrapper .today {
+margin-bottom: 3rem;
+}
+
+.info_wrapper .everyday {
+margin-bottom: 3rem;
+}
+
+
+}
