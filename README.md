@@ -6,7 +6,7 @@ Reactを使用して開発した天気予報アプリです。
 ---
 
 ## URL
-https://chat-app-two-snowy-89.vercel.app/  
+https://weather-app-seven-red-88.vercel.app/
  
 ---------
 

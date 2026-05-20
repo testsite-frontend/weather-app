@@ -388,6 +388,7 @@ br.sp{
   left: 50%;
   transform: translate(-50%, -50%);
   width: 60%;
+  backdrop-filter: blur(16px);
 }
 
 .wrapper > div.content.active{
